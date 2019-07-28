@@ -230,6 +230,40 @@ famous_cats.sort
   => 3
 ```
 
+## Pair Generator
+
+```
+1. get arr of all student names
+2. while there are students in the arr
+3. create a new arr
+4. get random number
+5. get student at that number
+6. push into arr
+7. if arr length is equal to 2, push into OG arr
+8. puts OG arr
+```
+
+```ruby
+arr = ["Dana", "Allie", "Emily", "Chloe", "Julia", "Allison"]
+
+def get_pairs(arr)
+  pairs_array = []
+  while arr.length > 0
+    pair = []
+    while pair.length < 2
+      rand_num = rand(0..arr.length - 1)
+      rand_person = arr[rand_num]
+      pair << rand_person
+      arr.delete(rand_person)
+    end
+    pairs_array << pair
+  end
+  puts pairs_array
+end
+
+get_pairs(arr)
+```
+
 ### Labs
 - [Ruby Array Exercises](https://github.com/learn-co-curriculum/ruby-array-exercises) - not in the curriculum, bonus array practice lab
 - [Tic Tac Toe Current Player](https://learn.co/tracks/full-stack-web-development-v6/intro-to-ruby-development/iteration/tic-tac-toe-current-player)
